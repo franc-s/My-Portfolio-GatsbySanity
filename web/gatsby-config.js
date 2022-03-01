@@ -42,10 +42,14 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#37474f`,
         display: `minimal-ui`,
+        icon: `static/francis.png`, // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-styled-components',
 
     'gatsby-plugin-react-helmet',
+
+    'gatsby-plugin-image',
+
   ],
 };

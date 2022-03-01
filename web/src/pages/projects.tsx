@@ -28,9 +28,7 @@ const Projects: React.FC<PageProps> = () => {
             }
             previewIMG {
               asset {
-                fluid {
-                  ...GatsbySanityImageFluid
-                }
+                  gatsbyImageData
               }
             }
           }
@@ -52,7 +50,7 @@ const Projects: React.FC<PageProps> = () => {
 
         const slug = project.slug.current;
 
-        const previewIMG = project.previewIMG.asset.fluid;
+        const previewIMG = project.previewIMG.asset.gatsbyImageData
         return (
           <ProjectPreview
             title={title}

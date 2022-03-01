@@ -1,5 +1,5 @@
 import React from 'react';
-import Img, { FluidObject } from 'gatsby-image';
+import { GatsbyImage, GatsbyImageProps } from "gatsby-plugin-image";
 import { Link } from 'gatsby';
 
 import styled from 'styled-components';
@@ -53,7 +53,7 @@ export const Landing = ({
   profileIMG,
 }: {
   landingIntro: string;
-  profileIMG: FluidObject;
+  profileIMG: GatsbyImageProps["image"];
 }) => (
   <>
     <div style={{ marginTop: `5%`, marginBottom: `5%` }}>
@@ -62,15 +62,14 @@ export const Landing = ({
           {landingIntro}
         </LandingTitle>
 
-        <Img
+        <GatsbyImage
+          image={profileIMG}
           alt="Francis De Lima"
-          fluid={profileIMG}
           style={{
             maxHeight: `calc(35vh - 4em)`,
             borderRadius: `50%`,
           }}
-          imgStyle={{ objectFit: `contain` }}
-        />
+          imgStyle={{ objectFit: `contain` }} />
       </Grid>
     </div>
 

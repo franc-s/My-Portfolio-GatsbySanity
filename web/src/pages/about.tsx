@@ -21,33 +21,25 @@ const About: React.FC<PageProps> = (): JSX.Element => {
 
             image1 {
               asset {
-                fluid {
-                  ...GatsbySanityImageFluid
-                }
+                  gatsbyImageData
               }
             }
 
             image2 {
               asset {
-                fluid {
-                  ...GatsbySanityImageFluid
-                }
+                gatsbyImageData
               }
             }
 
             image3 {
               asset {
-                fluid {
-                  ...GatsbySanityImageFluid
-                }
+                gatsbyImageData
               }
             }
 
             image4 {
               asset {
-                fluid {
-                  ...GatsbySanityImageFluid
-                }
+                  gatsbyImageData
               }
             }
           }
@@ -67,10 +59,10 @@ const About: React.FC<PageProps> = (): JSX.Element => {
     summary3,
   } = about;
 
-  const image1 = about.image1.asset.fluid;
-  const image2 = about.image2.asset.fluid;
-  const image3 = about.image3.asset.fluid;
-  const image4 = about.image4.asset.fluid;
+  const image1 = about.image1.asset.gatsbyImageData;
+  const image2 = about.image2.asset.gatsbyImageData
+  const image3 = about.image3.asset.gatsbyImageData
+  const image4 = about.image4.asset.gatsbyImageData
 
   return (
     <Layout>

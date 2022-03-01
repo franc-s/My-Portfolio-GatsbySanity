@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from 'styled-components';
 
 const Grid = styled.li`
@@ -63,14 +63,13 @@ const ProjectPreview = ({
 }: ProjectPreviewProps) => (
   <Grid>
     <StyledImageLink to={`/${slug}/`}>
-      <Img
-        fluid={imageData}
+      <GatsbyImage
+        image={imageData}
         alt={title}
         style={{
           maxHeight: `calc(40vh - 3em)`,
         }}
-        imgStyle={{ objectFit: `contain` }}
-      />
+        imgStyle={{ objectFit: `contain` }} />
     </StyledImageLink>
 
     <div style={{ marginTop: `auto`, marginBottom: `auto` }}>

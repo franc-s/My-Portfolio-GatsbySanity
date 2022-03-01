@@ -12,9 +12,7 @@ const Home: React.FC<PageProps> = (): JSX.Element => {
             landingIntro
             profileIMG {
               asset {
-                fluid {
-                  ...GatsbySanityImageFluid
-                }
+                  gatsbyImageData
               }
             }
           }
@@ -24,7 +22,7 @@ const Home: React.FC<PageProps> = (): JSX.Element => {
   `);
 
   const landing = data.allSanityLanding.edges[0].node;
-  const profileIMG = landing.profileIMG.asset.fluid;
+  const profileIMG = landing.profileIMG.asset.gatsbyImageData
   const { landingIntro } = landing;
 
   return (

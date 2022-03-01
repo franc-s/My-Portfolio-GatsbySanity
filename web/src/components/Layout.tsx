@@ -2,7 +2,7 @@ import styled, { createGlobalStyle, withTheme } from 'styled-components';
 
 import React from 'react';
 import { Reset } from 'styled-reset';
-import { ThemeManagerContext } from 'gatsby-styled-components-dark-mode';
+import { useStyledDarkMode } from 'gatsby-styled-components-dark-mode';
 import { Header } from './Header';
 import { Footer } from './Footer';
 
@@ -50,13 +50,13 @@ const GlobalStyle = createGlobalStyle`
 
 export const Layout = withTheme(
   ({ children }: { children: JSX.Element }): JSX.Element => {
-    const theme = React.useContext(ThemeManagerContext);
+    const { isDark, toggleDark } = useStyledDarkMode();
 
     return (
       <StyledLayout>
         <Reset />
         <GlobalStyle />
-        <Header toggleTheme={() => theme.toggleDark()} />
+        <Header toggleTheme={() => toggleDark()} />
         <StyledMain>{children}</StyledMain>
         <Footer />
       </StyledLayout>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Img, { FluidObject } from 'gatsby-image';
+import { GatsbyImage, GatsbyImageProps } from "gatsby-plugin-image";
 import styled from 'styled-components';
 import { Title } from './Title';
 
@@ -44,10 +44,10 @@ const StyledLink = styled.a`
 
 export interface AboutLayoutProps {
   introText: string;
-  image1: FluidObject;
-  image2: FluidObject;
-  image3: FluidObject;
-  image4: FluidObject;
+  image1:  GatsbyImageProps["image"];
+  image2:  GatsbyImageProps["image"];
+  image3:  GatsbyImageProps["image"];
+  image4:  GatsbyImageProps["image"];
   header1: string;
   summary1: string;
   header2: string;
@@ -93,18 +93,17 @@ const ImageItem = ({
   imageData,
   alt,
 }: {
-  imageData: FluidObject;
+  imageData: GatsbyImageProps["image"];
   alt: string;
 }) => (
-  <Img
+  <GatsbyImage
+    image={imageData}
     alt={alt}
-    fluid={imageData}
     style={{
       marginTop: `2%`,
       marginBottom: `2%`,
     }}
-    imgStyle={{ objectFit: `contain` }}
-  />
+    imgStyle={{ objectFit: `contain` }} />
 );
 
 const ContactMe = (): JSX.Element => (

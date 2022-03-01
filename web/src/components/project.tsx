@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'gatsby';
 
-import Image, { FluidObject } from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import styled from 'styled-components';
 import { Title } from '@/components/Title';
 
@@ -93,14 +93,13 @@ const Project = ({
 export default Project;
 
 const ProjectImage = ({ imageData, alt }) => (
-  <Image
-    fluid={imageData}
+  <GatsbyImage
+    image={imageData}
     alt={alt}
     style={{
       marginTop: `2%`,
       marginBottom: `2%`,
       maxHeight: `calc(50vh - 3em)`,
     }}
-    imgStyle={{ objectFit: `contain` }}
-  />
+    imgStyle={{ objectFit: `contain` }} />
 );

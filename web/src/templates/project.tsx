@@ -14,23 +14,19 @@ export const query = graphql`
       platform
       previewIMG {
         asset {
-          fluid {
-            ...GatsbySanityImageFluid
-          }
+            gatsbyImageData
+          
         }
       }
       projectIMG1 {
         asset {
-          fluid {
-            ...GatsbySanityImageFluid
-          }
+            gatsbyImageData
+          
         }
       }
       projectIMG2 {
         asset {
-          fluid {
-            ...GatsbySanityImageFluid
-          }
+          gatsbyImageData         
         }
       }
     }
@@ -48,9 +44,9 @@ const ProjectTemplate = ({ data }) => {
     technologies,
     platform,
   } = project;
-  const previewIMG = project.previewIMG.asset.fluid;
-  const projectIMG1 = project.projectIMG1?.asset.fluid;
-  const projectIMG2 = project.projectIMG2?.asset.fluid;
+  const previewIMG = project.previewIMG.asset.gatsbyImageData;
+  const projectIMG1 = project.projectIMG1?.asset.gatsbyImageData;
+  const projectIMG2 = project.projectIMG2?.asset.gatsbyImageData;
 
   return (
     <Layout>
